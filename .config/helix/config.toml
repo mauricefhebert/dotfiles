@@ -1,0 +1,50 @@
+theme = "monokai_pro_spectrum"
+# theme = "base16_default"
+
+[editor]
+mouse = true
+bufferline = "multiple"
+rulers = [120]
+auto-pairs = true
+auto-format = true
+color-modes = true
+preview-completion-insert = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+# Keybinds
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+C-s = ":w"
+C-q = ":bclose"
+C-space = "signature_help"
+a = ["append_mode", "collapse_selection"]
+y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_before"
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+# Add chatgpt support
+C-n = [
+  "extend_line",
+  ":insert-output echo 'FILL_THIS'",
+  "extend_line_below",
+  ":pipe sgpt --code --no-cache 'Using this comment, fill the line having the comment FILL_THIS.'",
+]
+
+[keys.insert]
+C-s = ":w"
+C-q = "collapse_selection"
+C-space = "signature_help"
+
+[keys.normal.space]
+q = ":quit"

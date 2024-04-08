@@ -1,0 +1,106 @@
+# Rust
+[[language]]
+name = "rust"
+comment-token = "//"
+language-servers = ["rust"]
+
+[language-server.rust]
+command = "rust-analyzer"
+args = [""]
+
+# HTML & Emmet
+[[language]]
+name = "html"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["emmet-ls"]
+formatter = { command = "emmet-ls" , args = ["--stdin"] }
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
+
+# CSS
+[[language]]
+name = "css"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["css-languageserver"]
+formatter = { command = "css-languageserver" , args = ["--stdin"] }
+
+[language-server.css-languageserver]
+command = "vscode-css-languageserver"
+
+# Json
+[[language]]
+name = "json"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["json-languageserver"]
+formatter = { command = "json-languageserver" , args = ["--stdin"] }
+
+[language-server.json-languageserver]
+command = "vscode-json-languageserver"
+
+# GO
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+roots = ["Gopkg.toml", "go.mod"]
+auto-format = true
+comment-token = "//"
+language-servers = ["gopls"]
+indent = { tab-width = 4, unit = "\t" }
+formatter = { command = "goimports" }
+
+[language-server.gopls]
+command = "gopls"
+
+# JavaScript & TypeSript
+[[language]]
+name = "typescript"
+language-servers = ["deno", "emmet-ls"]
+auto-format = true
+
+[language-server.deno]
+command = "deno"
+args = ["lsp"]
+
+# C Sharp
+[[language]]
+name = "c-sharp"
+language-servers = ["omnisharp"]
+
+[language-server.omnisharp]
+command = "dotnet"
+args = [ "/home/mauricefh/.local/bin/omnisharp/OmniSharp.dll", "--languageserver" ]
+
+# VueJS
+[[language]]
+name = "vue"
+formatter = { command = "prettier", args = ["--parser", "vue"] }
+
+#Python
+[[language]]
+name = "python"
+language-servers = [ "pyright", "ruff" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501"]
+
+[language.formatter]
+command = "black"
+args = ["--line-length", "88", "--quiet", "-"]
+
+#Docker
+[[language]]
+name = "dockerfile"
+language-servers = ["docker-langserver"]
+
+[language-server.docker-langserver]
+command = 'dockerfile-language-server-nodejs'
