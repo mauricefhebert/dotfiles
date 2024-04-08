@@ -11,6 +11,10 @@ export DENO_INSTALL="/home/maurice/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export OPENAI_API_KEY="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"
 
+# Task Warrior config and task location
+export TASKRC="$HOME/.config/task/.taskrc"
+export TASKDATA="$HOME/.config/task/.task"
+
 # Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -30,7 +34,6 @@ plugins=(git docker)
 source $ZSH/oh-my-zsh.sh
 
 # User aliases
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias cl='clear'
 
 # Zsh completion system
