@@ -10,7 +10,6 @@ export PATH="$DPRINT_INSTALL/bin:$PATH"
 export DENO_INSTALL="/home/maurice/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export OPENAI_API_KEY="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"
-
 # Task Warrior config and task location
 export TASKRC="$HOME/.config/task/.taskrc"
 export TASKDATA="$HOME/.config/task/.task"
@@ -61,3 +60,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(fzf --zsh)"
+eval "$(atuin init zsh)"
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"

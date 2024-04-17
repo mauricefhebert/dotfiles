@@ -33,6 +33,7 @@ a = ["append_mode", "collapse_selection"]
 y = "yank_main_selection_to_clipboard"
 p = "paste_clipboard_before"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-x = [":bc"]
 # Add chatgpt support
 C-n = [
   "extend_line",
