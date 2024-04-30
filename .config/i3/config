@@ -12,6 +12,7 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/libexec/gsd-xsettings
+exec --no-startup-id variety
 
 # Wallpaper
 
@@ -129,6 +130,18 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # Start i3bar to display a workspace bar & i3status
+# bar {
+#         status_command i3status
+# }
+
 bar {
-        status_command i3status
+  colors {
+    background #000000
+    statusline #8f8f8f
+  }
+  font pango:Ubuntu Mono, FontAwesome 10
+  i3bar_command i3bar -t
+  position top
+  workspace_buttons yes
+  status_command i3status
 }
